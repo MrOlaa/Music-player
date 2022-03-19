@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemPlayList));
             this.lb_songName = new System.Windows.Forms.Label();
-            this.lb_2 = new System.Windows.Forms.Label();
+            this.lb_author = new System.Windows.Forms.Label();
             this.lb_time = new System.Windows.Forms.Label();
             this.thumbnail = new System.Windows.Forms.PictureBox();
             this.btn_playing = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -39,36 +39,40 @@
             // 
             // lb_songName
             // 
-            this.lb_songName.AutoSize = true;
+            this.lb_songName.AutoEllipsis = true;
             this.lb_songName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_songName.ForeColor = System.Drawing.Color.White;
             this.lb_songName.Location = new System.Drawing.Point(123, 21);
             this.lb_songName.Name = "lb_songName";
-            this.lb_songName.Size = new System.Drawing.Size(218, 23);
+            this.lb_songName.Size = new System.Drawing.Size(354, 23);
             this.lb_songName.TabIndex = 0;
             this.lb_songName.Text = "1. Em Cua Ngay Hom Qua";
+            this.lb_songName.Click += new System.EventHandler(this.btn_playing_Click);
             // 
-            // lb_2
+            // lb_author
             // 
-            this.lb_2.AutoSize = true;
-            this.lb_2.Font = new System.Drawing.Font("Segoe UI", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_2.ForeColor = System.Drawing.Color.Silver;
-            this.lb_2.Location = new System.Drawing.Point(472, 30);
-            this.lb_2.Name = "lb_2";
-            this.lb_2.Size = new System.Drawing.Size(62, 12);
-            this.lb_2.TabIndex = 1;
-            this.lb_2.Text = "Son Tung MTP";
+            this.lb_author.AutoEllipsis = true;
+            this.lb_author.Font = new System.Drawing.Font("Segoe UI", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_author.ForeColor = System.Drawing.Color.Silver;
+            this.lb_author.Location = new System.Drawing.Point(472, 30);
+            this.lb_author.Name = "lb_author";
+            this.lb_author.Size = new System.Drawing.Size(92, 12);
+            this.lb_author.TabIndex = 1;
+            this.lb_author.Text = "Son Tung MTP";
+            this.lb_author.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_author.Click += new System.EventHandler(this.btn_playing_Click);
             // 
             // lb_time
             // 
-            this.lb_time.AutoSize = true;
+            this.lb_time.AutoEllipsis = true;
             this.lb_time.Font = new System.Drawing.Font("Segoe UI", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_time.ForeColor = System.Drawing.Color.Silver;
-            this.lb_time.Location = new System.Drawing.Point(558, 30);
+            this.lb_time.Location = new System.Drawing.Point(600, 30);
             this.lb_time.Name = "lb_time";
-            this.lb_time.Size = new System.Drawing.Size(22, 12);
+            this.lb_time.Size = new System.Drawing.Size(41, 12);
             this.lb_time.TabIndex = 4;
             this.lb_time.Text = "4:00";
+            this.lb_time.Click += new System.EventHandler(this.btn_playing_Click);
             // 
             // thumbnail
             // 
@@ -79,6 +83,7 @@
             this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail.TabIndex = 3;
             this.thumbnail.TabStop = false;
+            this.thumbnail.Click += new System.EventHandler(this.btn_playing_Click);
             // 
             // btn_playing
             // 
@@ -113,6 +118,7 @@
             this.btn_playing.WaitOnLoad = false;
             this.btn_playing.Zoom = 0;
             this.btn_playing.ZoomSpeed = 10;
+            this.btn_playing.Click += new System.EventHandler(this.btn_playing_Click);
             // 
             // ItemPlayList
             // 
@@ -122,21 +128,21 @@
             this.Controls.Add(this.lb_songName);
             this.Controls.Add(this.btn_playing);
             this.Controls.Add(this.thumbnail);
-            this.Controls.Add(this.lb_2);
+            this.Controls.Add(this.lb_author);
             this.Controls.Add(this.lb_time);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "ItemPlayList";
-            this.Size = new System.Drawing.Size(600, 67);
+            this.Size = new System.Drawing.Size(666, 67);
+            this.Click += new System.EventHandler(this.btn_playing_Click);
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lb_songName;
-        private System.Windows.Forms.Label lb_2;
+        private System.Windows.Forms.Label lb_author;
         private System.Windows.Forms.PictureBox thumbnail;
         private System.Windows.Forms.Label lb_time;
         private Bunifu.UI.WinForms.BunifuImageButton btn_playing;

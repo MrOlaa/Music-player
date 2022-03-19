@@ -22,8 +22,7 @@ namespace Music_player.Playlist
             get { return thumbnail.Image; }
             set { thumbnail.Image = value; }
         }
-
-        bool playing = false;
+        public static bool playing = false;
         public bool isPlaying
         {
             get { return playing; }
@@ -38,6 +37,7 @@ namespace Music_player.Playlist
                 {
                     btn_playing.Image = Resources.play_button;
                 }
+                this.BorderStyle = isPlaying ? BorderStyle.Fixed3D : BorderStyle.None;
             }
         }
         public string SongName
@@ -48,12 +48,26 @@ namespace Music_player.Playlist
                 lb_songName.Text = value;
             }
         }
-        public EventHandler onAction = null;
-
-        private void btn_playing_Click(object sender, EventArgs e)
+        public string AuthorName
         {
-            isPlaying = !isPlaying;
+            get { return lb_author.Text; }
+            set
+            {
+                lb_author.Text = value;
+            }
+        }
+        public string Time
+        {
+            get { return lb_time.Text; }
+            set
+            {
+                lb_time.Text = value;
+            }
+        }
+        public event EventHandler onAction = null;
 
+        public void btn_playing_Click(object sender, EventArgs e)
+        {
             if(onAction != null)
             {
                 onAction.Invoke(this, e);
